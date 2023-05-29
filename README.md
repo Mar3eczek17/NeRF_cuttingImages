@@ -5,10 +5,10 @@ After entering the command:
 
 To crop photos:
 
-To add Gaussian noise, enter the command:
+- To add Gaussian noise, enter the command:
 
-```python CuttingImagesGaussianNoise.py```
+  ```python CuttingImagesGaussianNoise.py```
 
-To add black squares, enter the command:
+- To add black squares, enter the command:
 
-```python CuttingImagesBlackSquare.py```
+  ```python CuttingImagesBlackSquare.py```
