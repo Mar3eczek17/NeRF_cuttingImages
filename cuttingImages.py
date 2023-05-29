@@ -7,14 +7,14 @@ def insert_black_squares(image, square_size):
 
     draw = ImageDraw.Draw(image)
 
-    # Oblicz nowy rozmiar kwadratu
+    # Calculate the new square size
     new_square_size = square_size
 
-    # Wylosuj losowe współrzędne lewego górnego rogu kwadratu
+    # Generate random coordinates for the top-left corner of the square
     left = random.randint(0, width - new_square_size)
     top = random.randint(0, height - new_square_size)
 
-    # Wstaw czarne pole w wybranym miejscu
+    # Insert a black square at the chosen position
     draw.rectangle((left, top, left + new_square_size, top + new_square_size), fill="black")
 
     return image
@@ -30,11 +30,11 @@ def process_images_in_folder(folder_path, square_size, percentage):
             image_path = os.path.join(folder_path, file)
             image = Image.open(image_path)
             modified_image = insert_black_squares(image, square_size)
-            modified_image.save(f"legoMod/modified_{file}")
+            modified_image.save(image_path)
 
-# Przykład użycia:
+# Example usage:
 folder_path = 'lego'
 square_size = 80
-percentage = 0.1  # 10% losowo wybranych obrazów
+percentage = 0.1  # 10% randomly selected images
 
 process_images_in_folder(folder_path, square_size, percentage)
